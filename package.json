@@ -1,0 +1,8 @@
+{
+  "name": "mac-dict-converter",
+  "version": "1.0.0",
+  "description": "Convert dictionaries for MacOSX Dictionary App",
+  "main": "index.js",
+  "author": "nogeek",
+  "license": "MIT"
+}
