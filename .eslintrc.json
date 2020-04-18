@@ -1,0 +1,91 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "node": true,
+    "jest": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "rules": {
+    "arrow-parens": [
+      "error",
+      "always"
+    ],
+    "arrow-body-style": [
+      "error",
+      "as-needed"
+    ],
+    "class-methods-use-this": "error",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "always-multiline"
+      }
+    ],
+    "function-paren-newline": [
+      "error",
+      "consistent"
+    ],
+    "import/newline-after-import": "error",
+    "import/no-dynamic-require": "error",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": true,
+        "peerDependencies": true
+      }
+    ],
+    "import/no-named-as-default": "off",
+    "import/no-unresolved": "error",
+    "import/no-webpack-loader-syntax": "error",
+    "import/prefer-default-export": "off",
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 120,
+        "tabWidth": 2,
+        "ignoreComments": false,
+        "ignoreTrailingComments": false,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "newline-per-chained-call": [
+      "warn",
+      {
+        "ignoreChainWithDepth": 3
+      }
+    ],
+    "no-confusing-arrow": "off",
+    "no-console": "off",
+    "no-underscore-dangle": "off",
+    "no-use-before-define": "error",
+    "object-curly-newline": [
+      "error",
+      {
+        "multiline": true,
+        "consistent": true,
+        "minProperties": 0
+      }
+    ],
+    "prefer-template": "error",
+    "require-yield": "warn"
+  }
+}

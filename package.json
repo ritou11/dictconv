@@ -1,8 +1,18 @@
 {
-  "name": "mac-dict-converter",
+  "name": "@ritou11/dictconv",
   "version": "1.0.0",
   "description": "Convert dictionaries for MacOSX Dictionary App",
+  "bin": "./bin/thunet-reg.js",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "author": "nogeek",
+  "maintainers": [
+    {
+      "name": "Haotian Liu",
+      "email": "ritou11@gmail.com"
+    }
+  ],
   "license": "MIT"
 }
