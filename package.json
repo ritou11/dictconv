@@ -14,5 +14,9 @@
       "email": "ritou11@gmail.com"
     }
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "yargs": "^15.3.1"
+  }
 }
