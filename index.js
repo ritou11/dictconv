@@ -1,8 +1,7 @@
-const _ = require('lodash');
-const os = require('os');
 const path = require('path');
 const fs = require('fs');
 const yargRoot = require('yargs');
+const { fromArchive } = require('./lib/stardict');
 
 module.exports = yargRoot
   .option('install', {
@@ -20,7 +19,11 @@ module.exports = yargRoot
         });
     },
     (argv) => {
-      console.log(`this command will be run by default ${argv.stardict}`)
+      if (path.extname(argv.stardict) == '.ifo') {
+        console.log(`${path.extname(argv.stardict)} file detected`);
+      } else {
+        fromArchive(argv.stardict);
+      }
     })
   .help()
   .alias('h', 'help')
