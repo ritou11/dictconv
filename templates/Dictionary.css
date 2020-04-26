@@ -1,0 +1,58 @@
+@charset "UTF-8";
+@namespace d url(http://www.apple.com/DTDs/DictionaryService-1.0.rng);
+
+d|entry {
+}
+
+h1 {
+    font-size: 150%;
+}
+
+html.apple_client-panel h1 {
+    font-size: 100%;
+}
+
+h3 {
+    font-size: 100%;
+}
+
+pre {
+    /* overflow: auto; */
+    white-space: pre-wrap;
+}
+
+html.apple_client-panel pre {
+    white-space: normal;
+}
+
+span.column {
+	display: block;
+	border: solid 2px #c0c0c0;
+	margin-left: 2em;
+	margin-right: 2em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	padding: 0.5em;
+}
+
+div.y:before {
+    content: "/";
+}
+
+div.y:after {
+    content: "/";
+}
+
+div.y {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 120%;
+    color: #333;
+}
+
+@media (prefers-dark-interface)
+{
+    body {
+        color: white;
+    }
+}
