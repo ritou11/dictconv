@@ -17,6 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.15",
+    "progress": "^2.0.3",
     "xmlbuilder2": "^2.1.2",
     "yargs": "^15.3.1"
   },
