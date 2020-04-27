@@ -5,11 +5,11 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>zh-Hans</string>
     <key>CFBundleDisplayName</key>
-    <string>$DICT_NAME</string>
+    <string><%= dictName %></string>
     <key>CFBundleIdentifier</key>
-    <string>com.apple.dictionary.$DICT_ID</string>
+    <string>com.apple.dictionary.<%= dictID %></string>
     <key>CFBundleName</key>
-    <string>$DICT_NAME</string>
+    <string><%= dictName %></string>
     <key>CFBundleShortVersionString</key>
     <string>1.0</string>
     <key>DCSDictionaryCopyright</key>
