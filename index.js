@@ -1,15 +1,9 @@
 const path = require('path');
-const fs = require('fs');
+// const fs = require('fs');
 const yargRoot = require('yargs');
-const { fromArchive, fromIfo } = require('./lib/stardict');
+const { fromArchive, fromIfo } = require('./lib/raw');
 
 module.exports = yargRoot
-  .option('install', {
-    alias: 'i',
-    describe: 'Install the converted dictionary to the system',
-    default: false,
-    type: 'boolean',
-  })
   .command('raw <stardict> <destPath>', 'Convert the startdict to xml dictionary.',
     (yargs) => {
       yargs
@@ -24,13 +18,12 @@ module.exports = yargRoot
     },
     (argv) => {
       if (path.extname(argv.stardict) === '.ifo') {
-        // console.log(`${path.extname(argv.stardict)} file detected`);
         fromIfo(argv.stardict, argv.destPath);
       } else {
         fromArchive(argv.stardict, argv.destPath);
       }
     })
-  .command('$0 <stardict> <destPath>', 'Convert the startdict to MacOSX dictionary.',
+  .command('convert <stardict> [<destPath>]', 'Convert the startdict to Mac dictionary.',
     (yargs) => {
       yargs
         .positional('stardict', {
@@ -40,9 +33,19 @@ module.exports = yargRoot
         .positional('destPath', {
           describe: '<destPath> The destination path.',
           type: 'string',
+        })
+        .option('install', {
+          alias: 'i',
+          describe: 'Install the converted dictionary to the system',
+          default: false,
+          type: 'boolean',
         });
     },
     (argv) => {
+      if (!argv.install && !argv.destPath) {
+        console.error('Please provide destination path or --install.');
+        return;
+      }
       console.log(argv);
     })
   .help()
