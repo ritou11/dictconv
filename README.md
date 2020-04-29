@@ -20,7 +20,7 @@ A Node.js version of [DictUnifier](https://github.com/jjgod/mac-dictionary-kit).
 
 ## Installation
 
-`yarn add @ritou11/dictconv` or `npm i -g @ritou11/dictconv`
+`yarn global add @ritou11/dictconv` or `npm i -g @ritou11/dictconv`
 
 You'll also need `gunzip`, `tar`,`cp`,`mkdir` in your system path. They should be installed with MacOSX already.
 
@@ -78,6 +78,12 @@ Options:
   --install, -i  Install the converted dictionary to the system
                                                       [boolean] [default: false]
 ```
+## TODOs
+1. duplicated index
+2. stardict 3.0.0 and idxoffsetbits=64 support
+3. res convert
+4. better way to get the unarchived path
+
 ## License
 
 MIT
