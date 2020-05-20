@@ -46,7 +46,10 @@
     <span class="tr">[<xsl:apply-templates/>]</span>
   </xsl:template>
 
-  <xsl:template match="k | ex">
+  <xsl:template match="k">
+  </xsl:template>
+
+  <xsl:template match="ex">
     <span class="{name()}"><xsl:apply-templates/></span>
   </xsl:template>
 

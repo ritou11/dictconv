@@ -1,6 +1,6 @@
 {
   "name": "@ritou11/dictconv",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Convert dictionaries for MacOSX Dictionary App",
   "bin": "./bin/dictconv.js",
   "main": "index.js",
