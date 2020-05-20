@@ -1,12 +1,12 @@
-const path = require('path');
-const fs = require('fs');
-const yargRoot = require('yargs');
-const { execSync } = require('child_process');
-const { fromArchive, fromIfo } = require('./lib/raw');
-const { buildDictionary } = require('./lib/build');
-const { mkTmpdir } = require('./lib/utils');
+import path from 'path';
+import fs from 'fs';
+import yargRoot from 'yargs';
+import { execSync } from 'child_process';
+import { fromArchive, fromIfo } from './lib/raw.js';
+import { buildDictionary } from './lib/build.js';
+import { mkTmpdir } from './lib/utils.js';
 
-module.exports = yargRoot
+export default yargRoot
   .command('raw <stardict> <destPath>', 'Convert the startdict to xml dictionary.',
     (yargs) => {
       yargs

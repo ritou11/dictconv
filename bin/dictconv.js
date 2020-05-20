@@ -1,3 +1,4 @@
 #!/usr/bin/env node
 
-require('..')();
+import _ from '../index.js';
+_();

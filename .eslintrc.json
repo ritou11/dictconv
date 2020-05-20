@@ -86,6 +86,7 @@
       }
     ],
     "prefer-template": "error",
-    "require-yield": "warn"
+    "require-yield": "warn",
+    "import/extensions": "off",
   }
 }
