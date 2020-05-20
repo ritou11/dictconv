@@ -18,6 +18,8 @@ Building would take some time, please be patient.
 ## Background
 A Node.js version of [DictUnifier](https://github.com/jjgod/mac-dictionary-kit). The original repo is no longer maintained, while I really want a converter for the Stardicts.
 
+Require Node.js >= 12 to support ES module.
+
 ## Installation
 
 `yarn global add @ritou11/dictconv` or `npm i -g @ritou11/dictconv`
