@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import yargRoot from 'yargs';
-import { execSync } from 'child_process';
+import { spawnSync } from 'child_process';
 import { fromArchive, fromIfo } from './lib/raw.js';
 import { buildDictionary } from './lib/build.js';
 import { mkTmpdir } from './lib/utils.js';
@@ -74,9 +74,16 @@ export default yargRoot
       });
       console.log('Built', dict);
       if (argv.install) {
-        execSync(`cp -r ${dict} ~/Library/Dictionaries/`);
+        const result = spawnSync('cp', ['-r', dict, '~/Library/Dictionaries/'], {
+          stdio: 'inherit',
+        });
+      
+        if (result.status !== 0) {
+          console.error('Error moving dictionary to target folder:', result.stderr?.toString() || 'Unknown error');
+          return;
+        }
         console.log('Installed to ~/Library/Dictionaries/');
-      }
+      }    
     })
   .command('convert <stardict> [<destPath>]', 'Convert the startdict to Mac dictionary.',
     (yargs) => {
@@ -135,9 +142,16 @@ export default yargRoot
       });
       console.log('Built', dict);
       if (argv.install) {
-        execSync(`cp -r ${dict} ~/Library/Dictionaries/`);
+        const result = spawnSync('cp', ['-r', dict, '~/Library/Dictionaries/'], {
+          stdio: 'inherit',
+        });
+      
+        if (result.status !== 0) {
+          console.error('Error moving dictionary to target folder:', result.stderr?.toString() || 'Unknown error');
+          return;
+        }
         console.log('Installed to ~/Library/Dictionaries/');
-      }
+      }    
     })
   .help()
   .alias('h', 'help')
