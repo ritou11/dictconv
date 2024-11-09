@@ -83,7 +83,7 @@ export default yargRoot
           return;
         }
         console.log('Installed to ~/Library/Dictionaries/');
-      }    
+      }
     })
   .command('convert <stardict> [<destPath>]', 'Convert the startdict to Mac dictionary.',
     (yargs) => {
@@ -151,7 +151,7 @@ export default yargRoot
           return;
         }
         console.log('Installed to ~/Library/Dictionaries/');
-      }    
+      }
     })
   .help()
   .alias('h', 'help')
