@@ -313,6 +313,29 @@ describe('convertDictData', () => {
     expect(result).to.include('<br />');
   });
 
+  it('should convert Chinese ruby notation for multi-character words', () => {
+    const html = '`1`苹果`2`píngguǒ<br />definition text';
+    const buffer = Buffer.from(html, 'utf8');
+
+    const result = convertDictData(buffer, 'h');
+
+    // Ruby notation should be converted for multi-character words
+    expect(result).to.include('<ruby>苹果<rt>píngguǒ</rt></ruby>');
+  });
+
+  it('should remove invalid XML characters from HTML', () => {
+    // Character 0x1D (29 decimal) is invalid in XML
+    const html = 'valid text\x1D with invalid char';
+    const buffer = Buffer.from(html, 'utf8');
+
+    const result = convertDictData(buffer, 'h');
+
+    // Invalid character should be removed
+    expect(result).to.include('valid text');
+    expect(result).to.include(' with invalid char');
+    expect(result).to.not.include('\x1D');
+  });
+
   it('should handle Pango type (g)', () => {
     const text = '<span>some pango markup</span>';
     const buffer = Buffer.from(text, 'utf8');
