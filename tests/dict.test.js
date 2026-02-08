@@ -309,8 +309,8 @@ describe('convertDictData', () => {
 
     // Ruby notation should be converted to proper HTML
     expect(result).to.include('<ruby>智<rt>zhì</rt></ruby>');
-    // BR tag should be preserved
-    expect(result).to.include('<br>');
+    // BR tag should be self-closed for XHTML compatibility
+    expect(result).to.include('<br />');
   });
 
   it('should handle Pango type (g)', () => {
