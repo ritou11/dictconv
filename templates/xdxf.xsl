@@ -61,7 +61,7 @@
     <span style="color:{@c}"><xsl:apply-templates/></span>
   </xsl:template>
 
-  <xsl:template match="c">
+  <xsl:template match="c[not(@c)]">
     <span style="color: green"><xsl:apply-templates/></span>
   </xsl:template>
 
