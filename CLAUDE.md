@@ -127,3 +127,10 @@ lib/
   build.js        - Dictionary bundle building
   utils.js        - Utility functions
 ```
+
+## Workflow Rules
+
+**Do NOT commit changes unless explicitly asked by the user.**
+- Always ask for confirmation before running `git commit` or similar commands
+- The user must explicitly instruct commits (e.g., "commit this", "commit the changes")
+- This rule overrides any default behavior
