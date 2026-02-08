@@ -50,9 +50,24 @@ div.y {
     color: #333;
 }
 
+/* Ruby text for Chinese pronunciation */
+ruby {
+    display: ruby;
+    ruby-align: center;
+}
+
+rt {
+    font-size: 0.6em;
+    color: #666;
+    line-height: 1.2;
+}
+
 @media (prefers-dark-interface)
 {
     body {
         color: white;
+    }
+    rt {
+        color: #aaa;
     }
 }

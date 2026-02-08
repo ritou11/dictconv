@@ -296,9 +296,21 @@ describe('convertDictData', () => {
 
     const result = convertDictData(buffer, 'h');
 
-    expect(result).to.include('bold');
-    expect(result).to.include('italic');
-    expect(result).to.include('<p class="plaintext">');
+    // HTML is preserved with allowed tags kept intact
+    expect(result).to.include('<b>bold</b>');
+    expect(result).to.include('<i>italic</i>');
+  });
+
+  it('should convert Chinese ruby notation in HTML type', () => {
+    const html = '`1`智`2`zhì<br>definition text';
+    const buffer = Buffer.from(html, 'utf8');
+
+    const result = convertDictData(buffer, 'h');
+
+    // Ruby notation should be converted to proper HTML
+    expect(result).to.include('<ruby>智<rt>zhì</rt></ruby>');
+    // BR tag should be preserved
+    expect(result).to.include('<br>');
   });
 
   it('should handle Pango type (g)', () => {
