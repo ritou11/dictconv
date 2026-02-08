@@ -5,7 +5,8 @@
   "bin": "./bin/dictconv.js",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "mocha tests/**/*.test.js"
   },
   "author": "nogeek",
   "maintainers": [
@@ -26,7 +27,9 @@
   "type": "module",
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "chai": "^6.2.2",
     "eslint": "^9.39.2",
-    "globals": "^17.3.0"
+    "globals": "^17.3.0",
+    "mocha": "^11.7.5"
   }
 }
