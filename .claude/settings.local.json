@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_github_github__list_issues",
+      "Bash(node --check:*)",
+      "Bash(node tests/testXdxf.js:*)",
+      "Bash(node:*)",
+      "mcp__plugin_github_github__issue_read",
+      "Bash(git checkout:*)",
+      "Bash(git add:*)",
+      "Bash(git reset:*)",
+      "Bash(git push:*)",
+      "mcp__plugin_github_github__create_pull_request",
+      "mcp__plugin_github_github__merge_pull_request",
+      "mcp__plugin_github_github__issue_write",
+      "mcp__plugin_github_github__add_issue_comment",
+      "mcp__plugin_github_github__list_pull_requests",
+      "mcp__plugin_github_github__pull_request_read",
+      "Bash(ls:*)",
+      "Bash(git pull:*)",
+      "mcp__plugin_github_github__update_pull_request",
+      "Bash(npm install:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd package-lock.json to lock dependencies\n\nThis addresses security vulnerabilities in:\n- minimist \\(PR #11\\)\n- ajv \\(PR #10\\)  \n- path-parse \\(PR #8\\)\n- glob-parent \\(PR #7\\)\n- hosted-git-info \\(PR #6\\)\n- y18n \\(PR #4\\)\n\nRunning npm audit shows 20 vulnerabilities that can be addressed\nwith npm audit fix in a follow-up commit.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(npm audit:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
